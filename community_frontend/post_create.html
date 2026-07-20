@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>게시글 작성</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="page-header">
+        <h1>게시글 작성</h1>
+
+        <a class="button-link secondary-button" href="./posts.html">
+          목록으로
+        </a>
+      </header>
+
+      <section class="card">
+        <form id="create-form">
+          <div class="form-group">
+            <label for="create-title">제목</label>
+            <input
+              id="create-title"
+              type="text"
+              placeholder="제목을 입력하세요."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="create-content">내용</label>
+            <textarea
+              id="create-content"
+              placeholder="내용을 입력하세요."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit">작성</button>
+        </form>
+
+        <p id="create-message" class="message"></p>
+      </section>
+    </main>
+
+    <script src="./js/post_create.js"></script>
+  </body>
+</html>

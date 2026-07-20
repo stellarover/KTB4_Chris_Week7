@@ -1,0 +1,338 @@
+/* 전체 요소 기본 설정 */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background-color: #f5f5f5;
+  color: #222;
+
+  font-family: Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 공통 레이아웃 */
+.container {
+  width: min(calc(100% - 32px), 720px);
+  margin: 60px auto;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+/* 카드 */
+.card {
+  padding: 24px;
+  margin-bottom: 20px;
+
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+/* 게시글 상세 */
+.post-detail-card h2 {
+  margin-bottom: 12px;
+  font-size: 26px;
+}
+
+.post-meta {
+  margin: 0 0 24px;
+
+  color: #666;
+  font-size: 14px;
+}
+
+#post-content {
+  margin: 0;
+
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* 폼 */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+
+  color: #222;
+  background-color: #fff;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #333;
+
+  box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.12);
+}
+
+.form-group textarea {
+  min-height: 180px;
+
+  line-height: 1.6;
+
+  resize: vertical;
+}
+
+/* 버튼 */
+.button-group {
+  display: flex;
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+button,
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+  padding: 10px 16px;
+
+  color: #fff;
+  background-color: #333;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
+}
+
+button:hover,
+.button-link:hover {
+  opacity: 0.85;
+}
+
+button:active,
+.button-link:active {
+  transform: translateY(1px);
+}
+
+button:focus-visible,
+.button-link:focus-visible {
+  outline: 3px solid rgba(47, 111, 213, 0.35);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.secondary-button {
+  background-color: #777;
+}
+
+.danger-button {
+  background-color: #b63838;
+}
+
+/* 게시글 목록 */
+.post-list {
+  display: grid;
+  gap: 16px;
+}
+
+.post-item {
+  padding: 20px;
+
+  background-color: #fff;
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.post-item:hover {
+  border-color: #888;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.post-item h2 {
+  margin: 0 0 10px;
+
+  font-size: 20px;
+}
+
+.post-item p {
+  overflow-wrap: anywhere;
+}
+
+/* 상태 메시지 */
+.message {
+  min-height: 24px;
+  margin: 16px 0 0;
+
+  font-weight: 700;
+}
+
+.error-message {
+  color: #d33;
+}
+
+.success-message {
+  color: #16803c;
+}
+
+/* 삭제 모달 */
+.delete-dialog {
+  width: min(calc(100% - 32px), 420px);
+  padding: 0;
+
+  background: transparent;
+
+  border: none;
+  border-radius: 16px;
+
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.3);
+}
+
+.delete-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+.delete-dialog-content {
+  padding: 28px;
+
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.delete-dialog-content h2 {
+  margin: 0 0 12px;
+
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.delete-dialog-content p {
+  margin: 0;
+
+  color: #666;
+  line-height: 1.6;
+}
+
+.delete-dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.delete-dialog-buttons button {
+  min-width: 90px;
+}
+
+/* 모바일 화면 */
+@media (max-width: 600px) {
+  .container {
+    width: min(calc(100% - 24px), 720px);
+    margin: 32px auto;
+  }
+
+  .page-header {
+    align-items: flex-start;
+  }
+
+  .page-header h1 {
+    font-size: 27px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .button-group {
+    flex-wrap: wrap;
+  }
+
+  .delete-dialog-content {
+    padding: 24px 20px;
+  }
+
+  .delete-dialog-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .delete-dialog-buttons button {
+    width: 100%;
+  }
+}

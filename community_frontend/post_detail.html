@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>게시글 상세</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <!-- 페이지 상단 -->
+      <header class="page-header">
+        <h1>게시글 상세</h1>
+
+        <a class="button-link secondary-button" href="./posts.html">
+          목록으로
+        </a>
+      </header>
+
+      <!-- 게시글 상세 내용 -->
+      <section class="card post-detail-card">
+        <h2 id="post-title">게시글을 불러오는 중입니다.</h2>
+
+        <p id="post-author" class="post-meta"></p>
+
+        <p id="post-content"></p>
+      </section>
+
+      <!-- 게시글 수정 -->
+      <section class="card">
+        <h2>게시글 수정</h2>
+
+        <form id="update-form">
+          <div class="form-group">
+            <label for="update-title"> 제목 </label>
+
+            <input
+              id="update-title"
+              name="title"
+              type="text"
+              maxlength="255"
+              placeholder="수정할 제목을 입력하세요."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="update-content"> 내용 </label>
+
+            <textarea
+              id="update-content"
+              name="content"
+              placeholder="수정할 내용을 입력하세요."
+              required
+            ></textarea>
+          </div>
+
+          <div class="button-group">
+            <button type="submit">수정</button>
+
+            <button id="delete-button" class="danger-button" type="button">
+              삭제
+            </button>
+          </div>
+        </form>
+
+        <p id="detail-message" class="message" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <!-- 게시글 삭제 확인 모달 -->
+    <dialog
+      id="delete-dialog"
+      class="delete-dialog"
+      aria-labelledby="delete-dialog-title"
+      aria-describedby="delete-dialog-description"
+    >
+      <div class="delete-dialog-content">
+        <h2 id="delete-dialog-title">게시글을 삭제하시겠습니까?</h2>
+
+        <p id="delete-dialog-description">삭제한 내용은 복구할 수 없습니다.</p>
+
+        <div class="delete-dialog-buttons">
+          <button
+            id="cancel-delete-button"
+            class="secondary-button"
+            type="button"
+          >
+            취소
+          </button>
+
+          <button
+            id="confirm-delete-button"
+            class="danger-button"
+            type="button"
+          >
+            확인
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="./js/post_detail.js"></script>
+  </body>
+</html>
